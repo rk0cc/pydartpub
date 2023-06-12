@@ -3,7 +3,7 @@ from frozendict import frozendict
 from typing import Optional, Any
 from versions import Version, VersionItem, parse_version, parse_version_set
 
-from pypub.structures.dependency import PubDependency, DependencyDict, parse_dependencies_dict
+from pydartpub.structures.dependency import PubDependency, DependencyDict, parse_dependencies_dict
 
 class PubspecSerializable:
     """
