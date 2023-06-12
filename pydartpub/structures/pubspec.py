@@ -1,9 +1,9 @@
 import copy
 from frozendict import frozendict
-from typing import Optional, Any
+from typing import Optional, Any, Sequence
 from versions import Version, VersionItem, parse_version, parse_version_set
 
-from pydartpub.structures.dependency import PubDependency, DependencyDict, parse_dependencies_dict
+from .dependency import PubDependency, DependencyDict, parse_dependencies_dict
 
 class PubspecSerializable:
     """
@@ -146,7 +146,7 @@ class Pubspec(PubspecSerializable):
         return self.__author
     
     @property
-    def authors(self) -> Optional[tuple[str, ...]]:
+    def authors(self) -> Optional[Sequence[str]]:
         """
         Same as `author` with multiple developers and also deprecated since Dart 2.7
         """
@@ -181,21 +181,21 @@ class Pubspec(PubspecSerializable):
         return self.__issue_tracker
     
     @property
-    def funding(self) -> Optional[tuple[str, ...]]:
+    def funding(self) -> Optional[Sequence[str]]:
         """
         URL link(s) of sponsorship
         """
         return self.__funding
     
     @property
-    def topics(self) -> Optional[tuple[str, ...]]:
+    def topics(self) -> Optional[Sequence[str]]:
         """
         Define topics (or hashtags) for this project
         """
         return self.__topics
     
     @property
-    def screenshots(self) -> Optional[tuple[PubspecScreenshot, ...]]:
+    def screenshots(self) -> Optional[Sequence[PubspecScreenshot]]:
         """
         Screenshot of package implementation
         """
